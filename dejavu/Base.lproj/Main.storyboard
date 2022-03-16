@@ -123,38 +123,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Express" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-F2-Mbg">
-                                <rect key="frame" x="207" y="113.5" width="91" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Express" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-F2-Mbg">
+                                <rect key="frame" x="187" y="113.5" width="207" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fF5-9a-Ijs">
-                                <rect key="frame" x="207" y="142.5" width="29" height="17"/>
+                                <rect key="frame" x="187" y="142.5" width="29" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvk-vA-0ne">
-                                <rect key="frame" x="207" y="171.5" width="7" height="17"/>
+                                <rect key="frame" x="187" y="171.5" width="7" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfk-RA-G9X">
-                                <rect key="frame" x="207" y="200.5" width="7" height="17"/>
+                                <rect key="frame" x="187" y="200.5" width="7" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://expressjs.com/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-Au-Tsm">
-                                <rect key="frame" x="207" y="229.5" width="143" height="17"/>
+                                <rect key="frame" x="187" y="229.5" width="222" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3943506" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5h-ot-EUE">
-                                <rect key="frame" x="207" y="258.5" width="61" height="17"/>
+                                <rect key="frame" x="187" y="258.5" width="61" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -165,13 +165,15 @@
                         <constraints>
                             <constraint firstItem="bvk-vA-0ne" firstAttribute="leading" secondItem="fF5-9a-Ijs" secondAttribute="leading" id="0fW-M9-7Zp"/>
                             <constraint firstItem="7cw-Au-Tsm" firstAttribute="leading" secondItem="Dfk-RA-G9X" secondAttribute="leading" id="3JR-vK-qup"/>
+                            <constraint firstItem="IFk-Ey-gae" firstAttribute="trailing" secondItem="KT3-F2-Mbg" secondAttribute="trailing" constant="20" id="BBS-kS-4vN"/>
                             <constraint firstItem="03U-ro-m1a" firstAttribute="top" secondItem="IFk-Ey-gae" secondAttribute="top" constant="25" id="BmL-Nj-uhG"/>
                             <constraint firstItem="02e-Xl-pBW" firstAttribute="leading" secondItem="jae-rf-d4K" secondAttribute="leading" id="D39-dn-R32"/>
                             <constraint firstItem="Dfk-RA-G9X" firstAttribute="centerY" secondItem="02e-Xl-pBW" secondAttribute="centerY" id="JKc-XQ-Ink"/>
                             <constraint firstItem="jae-rf-d4K" firstAttribute="top" secondItem="ZOe-8d-1v7" secondAttribute="bottom" constant="11" id="MEq-9h-seI"/>
                             <constraint firstItem="ZOe-8d-1v7" firstAttribute="top" secondItem="03U-ro-m1a" secondAttribute="bottom" constant="11" id="Nj8-hO-b8A"/>
-                            <constraint firstItem="KT3-F2-Mbg" firstAttribute="leading" secondItem="IFk-Ey-gae" secondAttribute="centerX" id="PS7-cs-qCm"/>
+                            <constraint firstItem="IFk-Ey-gae" firstAttribute="centerX" secondItem="KT3-F2-Mbg" secondAttribute="leading" constant="20" id="PS7-cs-qCm"/>
                             <constraint firstItem="fF5-9a-Ijs" firstAttribute="centerY" secondItem="ZOe-8d-1v7" secondAttribute="centerY" id="QO0-Nq-DSf"/>
+                            <constraint firstItem="IFk-Ey-gae" firstAttribute="trailing" secondItem="7cw-Au-Tsm" secondAttribute="trailing" constant="5" id="Qzq-Qy-cxf"/>
                             <constraint firstItem="fF5-9a-Ijs" firstAttribute="leading" secondItem="KT3-F2-Mbg" secondAttribute="leading" id="SfP-9O-kny"/>
                             <constraint firstItem="02e-Xl-pBW" firstAttribute="top" secondItem="jae-rf-d4K" secondAttribute="bottom" constant="11" id="V9b-cm-qwq"/>
                             <constraint firstItem="ZOe-8d-1v7" firstAttribute="leading" secondItem="03U-ro-m1a" secondAttribute="leading" id="b4W-57-PTC"/>
@@ -201,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZY7-hc-aEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="94"/>
+            <point key="canvasLocation" x="950.72463768115949" y="93.75"/>
         </scene>
     </scenes>
     <resources>
