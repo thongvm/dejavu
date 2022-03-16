@@ -15,6 +15,7 @@
 		046BE12927E0D74C008254D9 /* DejavuAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE12827E0D74C008254D9 /* DejavuAPI.swift */; };
 		046BE12B27E0D9A8008254D9 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE12A27E0D9A8008254D9 /* ActivityModel.swift */; };
 		04ACB97A27E0DDD2008EEC3F /* DejavuError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACB97927E0DDD2008EEC3F /* DejavuError.swift */; };
+		04ACB97E27E0EC0C008EEC3F /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 04ACB97D27E0EC0C008EEC3F /* PromiseKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04ACB97E27E0EC0C008EEC3F /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +123,9 @@
 			dependencies = (
 			);
 			name = dejavu;
+			packageProductDependencies = (
+				04ACB97D27E0EC0C008EEC3F /* PromiseKit */,
+			);
 			productName = dejavu;
 			productReference = 042EF23927E0CC2100483E82 /* dejavu.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 042EF23027E0CC2000483E82;
+			packageReferences = (
+				04ACB97C27E0EC0C008EEC3F /* XCRemoteSwiftPackageReference "PromiseKit" */,
+			);
 			productRefGroup = 042EF23A27E0CC2100483E82 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -402,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04ACB97C27E0EC0C008EEC3F /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				branch = v6;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04ACB97D27E0EC0C008EEC3F /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04ACB97C27E0EC0C008EEC3F /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 042EF23127E0CC2000483E82 /* Project object */;
 }
