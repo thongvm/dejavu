@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActivityCell" id="RgD-rn-GVs" customClass="ActivityCell" customModule="dejavu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FQd-rI-LAZ">
+                <rect key="frame" x="0.0" y="0.0" width="359" height="72"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Express.js" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-Ia-LBo">
+                        <rect key="frame" x="20" y="5" width="276" height="29"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accessibility: 0.25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soy-MW-pDn">
+                        <rect key="frame" x="20" y="38" width="110" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLQ-Nf-LPg">
+                        <rect key="frame" x="316" y="28" width="23" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="q64-4E-dGJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="soy-MW-pDn" firstAttribute="top" secondItem="FQd-rI-LAZ" secondAttribute="centerY" constant="2" id="5nW-aN-kbg"/>
+                    <constraint firstAttribute="centerY" secondItem="Tfc-Ia-LBo" secondAttribute="bottom" constant="2" id="Chb-vF-bjG"/>
+                    <constraint firstItem="VLQ-Nf-LPg" firstAttribute="leading" secondItem="Tfc-Ia-LBo" secondAttribute="trailing" constant="20" id="DPK-0R-cfG"/>
+                    <constraint firstItem="VLQ-Nf-LPg" firstAttribute="centerY" secondItem="FQd-rI-LAZ" secondAttribute="centerY" id="E7H-GN-xAW"/>
+                    <constraint firstItem="soy-MW-pDn" firstAttribute="leading" secondItem="Tfc-Ia-LBo" secondAttribute="leading" id="HaC-YG-ZOG"/>
+                    <constraint firstAttribute="trailing" secondItem="VLQ-Nf-LPg" secondAttribute="trailing" constant="20" id="MMJ-vu-JVh"/>
+                    <constraint firstItem="Tfc-Ia-LBo" firstAttribute="top" secondItem="FQd-rI-LAZ" secondAttribute="top" constant="5" id="XFN-GY-CUF"/>
+                    <constraint firstItem="Tfc-Ia-LBo" firstAttribute="leading" secondItem="FQd-rI-LAZ" secondAttribute="leading" constant="20" id="coC-y4-mYb"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <size key="customSize" width="359" height="72"/>
+            <connections>
+                <outlet property="lbAccessibility" destination="soy-MW-pDn" id="f8D-58-Buj"/>
+                <outlet property="lbActivity" destination="Tfc-Ia-LBo" id="czE-4e-Fx1"/>
+                <outlet property="lbParticipants" destination="VLQ-Nf-LPg" id="qBV-e1-MsQ"/>
+            </connections>
+            <point key="canvasLocation" x="142.75362318840581" y="75"/>
+        </collectionViewCell>
+    </objects>
+</document>
