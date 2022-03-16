@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let dejavuAPI: DejavuAPI = .init()
     let types = ["education", "recreational", "social", "diy", "charity"]
     let count = 5
+    let refreshControl = UIRefreshControl()
     
     var keys: [String] = []
     var disposables = Set<AnyCancellable>()
@@ -24,7 +25,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        self.getData()
     }
     
     func setupUI() {
@@ -39,9 +39,22 @@ class ViewController: UIViewController {
         // assign delegate & datasource
         self.listView.delegate = self
         self.listView.dataSource = self
+        
+        // add refresh control
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
+        self.listView.addSubview(self.refreshControl)
+        
+        // get data
+        self.refresh()
+    }
+    
+    @objc func refresh() {
+        self.getData()
     }
     
     func getData() {
+        
         var p: [Promise<ActivityModel>] = []
         
         // create all promises
@@ -86,6 +99,7 @@ class ViewController: UIViewController {
             dump(error)
         }.finally {
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.refreshControl.endRefreshing()
         }
     }
     
