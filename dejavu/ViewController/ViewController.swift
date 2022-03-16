@@ -10,32 +10,64 @@ import Combine
 import PromiseKit
 
 class ViewController: UIViewController {
-    let dejavuAPI: DejavuAPI = .init()
-    var disposables = Set<AnyCancellable>()
+    @IBOutlet weak var listView: UICollectionView!
     
+    let dejavuAPI: DejavuAPI = .init()
     let types = ["education", "recreational", "social", "diy", "charity"]
     let count = 5
-    @Published var data: [[String: ActivityModel]] = []
+    
+    var keys: [String] = []
+    var disposables = Set<AnyCancellable>()
+    var data: [String: [ActivityModel?]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getData()
     }
     
+    func setupUI() {
+        
+    }
+    
     func getData() {
         var p: [Promise<ActivityModel>] = []
         
+        // create all promises
         self.types.forEach { type in
             for _ in 0..<5 {
                 p.append(makeRequest(type: type))
             }
         }
         
+        // resolve promises
         firstly {
             when(resolved: p)
         }.done { arr in
-            dump("length: \(arr.count)")
-            dump(arr)
+            
+            var objs = arr.map { result -> ActivityModel? in
+                switch result {
+                case .fulfilled(let activity):
+                    return activity
+                case .rejected( _):
+                    return nil
+                }
+            }.filter { t -> Bool in
+                return t != nil
+            }
+            
+            // sort accessibility
+            objs = objs.sorted {$0!.accessibility < $1!.accessibility }
+            
+            // group data
+            let group = Dictionary(grouping: objs, by: { $0!.type })
+            self.data = group
+            
+            // sort key
+            let allKeys = Array(group.keys).sorted { $0 < $1 }
+            self.keys = allKeys
+            
+            // reload data
+            
         }.catch { error in
             dump(error)
         }.finally {
@@ -54,13 +86,13 @@ class ViewController: UIViewController {
                           seal.reject(DejavuError.network(desc: "Failed to load"))
                           break
                       case .finished:
-                        break
+                          break
                       }
                     },
                     receiveValue: {  activity in
                         seal.fulfill(activity)
                   })
-                  .store(in: &disposables)
+                .store(in: &disposables)
         }
        
     }
