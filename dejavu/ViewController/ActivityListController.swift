@@ -10,7 +10,7 @@ import Combine
 import PromiseKit
 import MBProgressHUD
 
-class ViewController: UIViewController {
+class ActivityListController: UIViewController {
     @IBOutlet weak var listView: UICollectionView!
     
     let dejavuAPI: DejavuAPI = .init()
@@ -65,6 +65,7 @@ class ViewController: UIViewController {
         }
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
+        /// TODO: Enhance promise failed
         // resolve promises
         firstly {
             when(resolved: p)
@@ -126,13 +127,18 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+/// UICollectionView Delegate
+extension ActivityListController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ActivityDetailController") as! ActivityDetailController
+        let key = self.keys[indexPath.section]
+        detailVC.activity = self.data[key]![indexPath.row]!
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+/// UICollectionView DataSource
+extension ActivityListController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.keys.count
     }
@@ -162,7 +168,8 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+/// UICollectionView DelegateFlowLayout
+extension ActivityListController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: self.view.frame.self.width - 20, height: 70)
     }
